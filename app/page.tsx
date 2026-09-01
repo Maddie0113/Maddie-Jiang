@@ -58,6 +58,7 @@ export default function Home() {
   const homeReadyRef = useRef(false);
   const touchRef = useRef<{ y: number; progress: number } | null>(null);
   const [homeReady, setHomeReady] = useState(false);
+  const [keychainActive, setKeychainActive] = useState(false);
   const [panel, setPanel] = useState<PanelKey>(null);
   const [slide, setSlide] = useState(0);
 
@@ -74,7 +75,10 @@ export default function Home() {
     if (homeReadyRef.current !== nextReady) {
       homeReadyRef.current = nextReady;
       setHomeReady(nextReady);
-      if (!nextReady) setPanel(null);
+      if (!nextReady) {
+        setKeychainActive(false);
+        setPanel(null);
+      }
     }
   }, []);
 
@@ -155,8 +159,23 @@ export default function Home() {
             }}
           />
 
+          <div className={`keychain-hover-art ${keychainActive ? 'is-active' : ''}`} aria-hidden="true">
+            <img className="keychain-eraser" src="/keychain-eraser.png" alt="" />
+            <img className="keychain-swing" src="/keychain.png" alt="" />
+          </div>
+
           <div className="hotspots" aria-hidden={!homeReady}>
-            <button className="hotspot hotspot-about" type="button" disabled={!homeReady} onClick={() => openPanel('about')} aria-label="打开关于我"><span>ABOUT ME</span></button>
+            <button
+              className="hotspot hotspot-about"
+              type="button"
+              disabled={!homeReady}
+              onPointerEnter={() => setKeychainActive(true)}
+              onPointerLeave={() => setKeychainActive(false)}
+              onFocus={() => setKeychainActive(true)}
+              onBlur={() => setKeychainActive(false)}
+              onClick={() => openPanel('about')}
+              aria-label="打开关于我"
+            ><span>ABOUT ME</span></button>
             <button className="hotspot hotspot-bound" type="button" disabled={!homeReady} onClick={() => openPanel('bound-pie')} aria-label="打开弹性派项目"><span>BOUND PIE</span></button>
             <button className="hotspot hotspot-dong" type="button" disabled={!homeReady} onClick={() => openPanel('dong')} aria-label="打开别有侗听项目"><span>别有侗听</span></button>
             <button className="hotspot hotspot-ai" type="button" disabled={!homeReady} onClick={() => openPanel('ai-platform')} aria-label="打开 AI 实训平台项目"><span>AI 实训平台</span></button>

@@ -10,10 +10,18 @@ button, a { font: inherit; color: inherit; }
 .motion-stage { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; touch-action: none; user-select: none; }
 .motion-canvas { position: relative; width: min(100vw, calc(100svh * 1.7777778)); aspect-ratio: 16 / 9; overflow: hidden; }
 .motion-film { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; }
+.keychain-hover-art { position: absolute; z-index: 1; left: 13.958%; top: 9.506%; width: 23.889%; height: 86.79%; opacity: 0; pointer-events: none; }
+.home-ready .keychain-hover-art.is-active { opacity: 1; }
+.keychain-eraser, .keychain-swing { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.keychain-eraser { object-fit: fill; }
+.keychain-swing { object-fit: fill; transform-origin: 50% 4%; }
+.home-ready .keychain-hover-art.is-active .keychain-swing { animation: keychain-swing 1.9s ease-in-out both; }
 .hotspots { position: absolute; inset: 0; pointer-events: none; }
 .hotspot { position: absolute; border: 0; border-radius: 18px; background: transparent; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
 .home-ready .hotspot { pointer-events: auto; }
 .hotspot:hover, .hotspot:focus-visible { opacity: 1; background: rgba(75,207,129,.14); box-shadow: inset 0 0 0 3px rgba(75,207,129,.88); outline: none; }
+.hotspot-about:hover, .hotspot-about:focus-visible { opacity: 0; background: transparent; box-shadow: none; }
+.hotspot-about span { display: none; }
 .hotspot span { position: absolute; left: 50%; bottom: -10px; transform: translate(-50%,100%); border: 2px solid white; border-radius: 999px; background: var(--orange); box-shadow: 4px 4px 0 var(--blue); color: white; padding: 7px 11px; white-space: nowrap; font-size: clamp(9px,.72vw,13px); font-weight: 900; }
 .hotspot-about { left: 17%; top: 36%; width: 18%; height: 52%; }
 .hotspot-bound { left: 37.4%; top: 31%; width: 12.5%; height: 27%; }
@@ -64,6 +72,15 @@ button, a { font: inherit; color: inherit; }
 .polaroid img { width: 100%; height: 350px; object-fit: contain; background: #cfe1ef; }
 .polaroid p { margin: 18px 5px 0; color: var(--ink); font-weight: 900; letter-spacing: .08em; } .polaroid span { font-size: 11px; }
 @keyframes wheel { from { transform: translateY(0); opacity: 0; } 35% { opacity: 1; } to { transform: translateY(8px); opacity: 0; } }
+@keyframes keychain-swing {
+  0% { transform: rotate(0deg); }
+  23% { transform: rotate(-6deg); }
+  44% { transform: rotate(3.6deg); }
+  62% { transform: rotate(-2.2deg); }
+  77% { transform: rotate(1.25deg); }
+  90% { transform: rotate(-.55deg); }
+  100% { transform: rotate(0deg); }
+}
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes panel-in { from { opacity: 0; transform: scale(.88) rotate(1deg); } }
 @media (max-width: 760px) {
