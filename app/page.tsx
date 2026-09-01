@@ -161,7 +161,9 @@ export default function Home() {
 
           <div className={`keychain-hover-art ${keychainActive ? 'is-active' : ''}`} aria-hidden="true">
             <img className="keychain-eraser" src="/keychain-eraser.png" alt="" />
-            <img className="keychain-swing" src="/keychain.png" alt="" />
+            <span className="keychain-swing-window">
+              <img className="keychain-swing" src="/keychain.png" alt="" />
+            </span>
           </div>
 
           <div className="hotspots" aria-hidden={!homeReady}>

@@ -12,9 +12,10 @@ button, a { font: inherit; color: inherit; }
 .motion-film { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; }
 .keychain-hover-art { position: absolute; z-index: 1; left: 13.958%; top: 9.506%; width: 23.889%; height: 86.79%; opacity: 0; pointer-events: none; }
 .home-ready .keychain-hover-art.is-active { opacity: 1; }
-.keychain-eraser, .keychain-swing { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.keychain-eraser, .keychain-swing-window, .keychain-swing { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .keychain-eraser { object-fit: fill; }
-.keychain-swing { object-fit: fill; transform-origin: 50% 4%; }
+.keychain-swing-window { overflow: hidden; clip-path: inset(16.8% 0 0); }
+.keychain-swing { object-fit: fill; transform-origin: 50% 16.8%; }
 .home-ready .keychain-hover-art.is-active .keychain-swing { animation: keychain-swing 1.9s ease-in-out both; }
 .hotspots { position: absolute; inset: 0; pointer-events: none; }
 .hotspot { position: absolute; border: 0; border-radius: 18px; background: transparent; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
