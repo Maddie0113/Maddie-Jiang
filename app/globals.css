@@ -13,6 +13,7 @@ button, a { font: inherit; color: inherit; }
 .keychain-hover-art { position: absolute; z-index: 1; inset: 0; opacity: 0; pointer-events: none; }
 .home-ready .keychain-hover-art.is-active { opacity: 1; }
 .keychain-eraser, .keychain-swing { position: absolute; left: 16.771%; top: 10.123%; display: block; width: 19.271%; height: 75.864%; object-fit: fill; }
+.keychain-note-restorer { position: absolute; z-index: 1; left: 36.042%; top: 26.543%; display: block; width: 1.458%; height: 59.877%; object-fit: fill; }
 .keychain-swing { z-index: 2; transform-origin: 50% 3.8%; }
 .keychain-pin { position: absolute; z-index: 3; left: 24.097%; top: 10.864%; display: block; width: 3.75%; height: 7.593%; object-fit: fill; }
 .home-ready .keychain-hover-art.is-active .keychain-swing { animation: keychain-swing 1.9s ease-in-out both; }
