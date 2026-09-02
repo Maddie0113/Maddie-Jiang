@@ -44,6 +44,24 @@ button, a { font: inherit; color: inherit; }
 .hover-gemini { left: 53.75%; top: 84.028%; width: 2.812%; height: 5.694%; }
 .hover-vscode { left: 58.047%; top: 82.708%; width: 2.969%; height: 5.347%; }
 .hover-chatgpt { left: 61.328%; top: 84.792%; width: 4.062%; height: 5.139%; }
+.hover-cake-cat { z-index: 3; left: 46.289%; top: 27.431%; width: 12.07%; height: 27.153%; transform-origin: 50% 70%; }
+.hover-cake-cat:focus-visible { outline: none; }
+.hover-cake-cat:hover > img, .hover-cake-cat:focus-visible > img { transform: scale(1.04); filter: drop-shadow(0 7px 6px rgba(26,44,58,.18)); }
+.hover-cake-cat:active > img { transform: scale(.985); transition-duration: 70ms; }
+.hover-cake-cat.is-jiggling > img { animation: jelly-bounce 760ms cubic-bezier(.22,.74,.22,1) both; }
+.jelly-prompt { position: absolute; left: 51%; bottom: -1%; color: var(--orange); opacity: 0; transform: translate(-50%,5px) rotate(-2deg); transition: opacity 160ms ease, transform 180ms ease; white-space: nowrap; font-family: "KaiTi", "STKaiti", cursive; font-size: clamp(9px,.82vw,15px); font-weight: 900; letter-spacing: .08em; pointer-events: none; }
+.hover-cake-cat:hover .jelly-prompt, .hover-cake-cat:focus-visible .jelly-prompt { opacity: .9; transform: translate(-50%,0) rotate(-2deg); }
+.jelly-sparkles { position: absolute; inset: 0; pointer-events: none; }
+.jelly-sparkles i { position: absolute; left: 50%; top: 54%; width: 5px; height: 13px; border-radius: 999px; background: var(--green); opacity: 0; transform: translate(-50%,-50%) rotate(var(--spark-rotate)); }
+.jelly-sparkles i:nth-child(1) { --spark-x: -84px; --spark-y: -62px; --spark-rotate: -32deg; background: var(--pink); }
+.jelly-sparkles i:nth-child(2) { --spark-x: -104px; --spark-y: 9px; --spark-rotate: 74deg; background: var(--blue); }
+.jelly-sparkles i:nth-child(3) { --spark-x: -72px; --spark-y: 73px; --spark-rotate: 28deg; background: var(--green); }
+.jelly-sparkles i:nth-child(4) { --spark-x: -10px; --spark-y: 92px; --spark-rotate: -18deg; background: #ffd447; }
+.jelly-sparkles i:nth-child(5) { --spark-x: 67px; --spark-y: 77px; --spark-rotate: 34deg; background: var(--orange); }
+.jelly-sparkles i:nth-child(6) { --spark-x: 104px; --spark-y: 17px; --spark-rotate: 76deg; background: var(--pink); }
+.jelly-sparkles i:nth-child(7) { --spark-x: 88px; --spark-y: -59px; --spark-rotate: -28deg; background: var(--blue); }
+.jelly-sparkles i:nth-child(8) { --spark-x: 18px; --spark-y: -93px; --spark-rotate: 14deg; background: var(--green); }
+.hover-cake-cat.is-jiggling .jelly-sparkles i { animation: jelly-spark 620ms cubic-bezier(.18,.72,.28,1) 90ms both; }
 .hotspots { position: absolute; inset: 0; pointer-events: none; }
 .hotspot { position: absolute; border: 0; border-radius: 18px; background: transparent; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
 .home-ready .hotspot { pointer-events: auto; }
@@ -103,6 +121,21 @@ button, a { font: inherit; color: inherit; }
   77% { transform: rotate(1.25deg) scale(1); }
   90% { transform: rotate(-.55deg) scale(1); }
   100% { transform: rotate(0deg) scale(1); }
+}
+@keyframes jelly-bounce {
+  0% { transform: scale(1.04); }
+  10% { transform: translateY(1.5%) scaleX(1.11) scaleY(.91); }
+  27% { transform: translateY(-4.2%) scaleX(.92) scaleY(1.16); }
+  43% { transform: translateY(.8%) scaleX(1.075) scaleY(.96); }
+  60% { transform: translateY(-1.5%) scaleX(.975) scaleY(1.07); }
+  76% { transform: translateY(.3%) scaleX(1.035) scaleY(1.005); }
+  89% { transform: translateY(-.35%) scaleX(1.015) scaleY(1.035); }
+  100% { transform: scale(1.04); }
+}
+@keyframes jelly-spark {
+  0% { opacity: 0; transform: translate(-50%,-50%) scale(.2) rotate(var(--spark-rotate)); }
+  24% { opacity: .95; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--spark-x)),calc(-50% + var(--spark-y))) scale(1) rotate(var(--spark-rotate)); }
 }
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes panel-in { from { opacity: 0; transform: scale(.88) rotate(1deg); } }

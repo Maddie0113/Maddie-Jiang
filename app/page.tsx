@@ -79,6 +79,7 @@ export default function Home() {
   const touchRef = useRef<{ y: number; progress: number } | null>(null);
   const [homeReady, setHomeReady] = useState(false);
   const [keychainActive, setKeychainActive] = useState(false);
+  const [jellyBurst, setJellyBurst] = useState(0);
   const [panel, setPanel] = useState<PanelKey>(null);
   const [slide, setSlide] = useState(0);
 
@@ -208,6 +209,25 @@ export default function Home() {
                 <img src={`/interactions/${item.id}.png`} alt="" />
               </span>
             ))}
+            <button
+              className={`hover-item hover-cake-cat ${jellyBurst ? 'is-jiggling' : ''}`}
+              type="button"
+              disabled={!homeReady}
+              onClick={() => setJellyBurst((burst) => burst + 1)}
+              aria-label="捏一捏蛋糕猫咪"
+            >
+              <img
+                key={jellyBurst}
+                className="jelly-image"
+                src="/interactions/cake-cat.png"
+                alt=""
+                onAnimationEnd={() => setJellyBurst(0)}
+              />
+              <span className="jelly-prompt" aria-hidden="true">捏一捏</span>
+              <span className="jelly-sparkles" aria-hidden="true">
+                {Array.from({ length: 8 }, (_, index) => <i key={index} />)}
+              </span>
+            </button>
           </div>
 
           <div className="hotspots" aria-hidden={!homeReady}>
