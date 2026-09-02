@@ -48,7 +48,7 @@ const projects = {
 
 const hoverItems = [
   { id: 'cassette', label: '磁带', tilt: 'left' },
-  { id: 'bound', label: '打开弹性派项目', tilt: 'left', panel: 'bound-pie' },
+  { id: 'bound-pie', label: '打开弹性派项目', tilt: 'left', panel: 'bound-pie' },
   { id: 'ticket', label: '邮票', tilt: 'right' },
   { id: 'camera', label: '打开拍立得', tilt: 'right', panel: 'camera' },
   { id: 'ai-platform', label: '打开 AI 实训平台项目', tilt: 'right', panel: 'ai-platform' },

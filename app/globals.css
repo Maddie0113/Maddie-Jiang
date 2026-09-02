@@ -20,27 +20,30 @@ button, a { font: inherit; color: inherit; }
 .hover-item { position: absolute; display: block; margin: 0; border: 0; background: transparent; padding: 0; pointer-events: none; cursor: pointer; }
 .home-ready .hover-item { pointer-events: auto; }
 .hover-item > img { display: block; width: 100%; height: 100%; object-fit: fill; opacity: 0; transform: translateY(0) rotate(0) scale(1); filter: drop-shadow(0 0 0 rgba(26,44,58,0)); transition: opacity 60ms linear, transform 230ms cubic-bezier(.2,.8,.2,1), filter 230ms ease; }
-.hover-item:hover > img, .hover-item:focus-visible > img { opacity: 1; transform: translateY(-5%) rotate(var(--hover-tilt)) scale(1.09); filter: drop-shadow(0 10px 8px rgba(26,44,58,.22)); }
+.hover-item:not(.hover-cassette):not(.hover-ticket) > img { object-fit: contain; }
+.hover-item:hover > img, .hover-item:focus-visible > img { opacity: 1; transform: scale(1.06); filter: drop-shadow(0 8px 7px rgba(26,44,58,.2)); }
+.hover-cassette:hover > img, .hover-cassette:focus-visible > img,
+.hover-ticket:hover > img, .hover-ticket:focus-visible > img { transform: translateY(-5%) rotate(var(--hover-tilt)) scale(1.09); filter: drop-shadow(0 10px 8px rgba(26,44,58,.22)); }
 .hover-item:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
 .tilt-left { --hover-tilt: -3deg; }
 .tilt-right { --hover-tilt: 3deg; }
 .hover-cassette { left: 28.35%; top: 18.4%; width: 11.3%; height: 13.9%; }
-.hover-bound { left: 37.55%; top: 30.8%; width: 10.1%; height: 21.9%; }
+.hover-bound-pie { left: 37.5%; top: 31.042%; width: 9.648%; height: 17.986%; }
 .hover-ticket { left: 70.25%; top: 12.7%; width: 13.4%; height: 13.5%; }
-.hover-camera { left: 71.1%; top: 28.2%; width: 12.5%; height: 19.0%; }
-.hover-ai-platform { left: 57.25%; top: 43.6%; width: 10.8%; height: 20.0%; }
-.hover-dong { left: 43.95%; top: 65.9%; width: 16.2%; height: 16.2%; }
-.hover-star { left: 68.45%; top: 73.0%; width: 3.2%; height: 5.8%; }
-.hover-chat { left: 65.85%; top: 80.3%; width: 4.2%; height: 5.6%; }
-.hover-contact { left: 70.8%; top: 56.1%; width: 13.0%; height: 31.0%; }
-.hover-figma { left: 32.1%; top: 80.4%; width: 3.2%; height: 6.0%; }
-.hover-blender { left: 35.0%; top: 83.7%; width: 4.1%; height: 5.6%; }
-.hover-canva { left: 39.9%; top: 84.0%; width: 3.4%; height: 5.5%; }
-.hover-capcut { left: 44.7%; top: 83.4%; width: 4.2%; height: 6.2%; }
-.hover-photoshop { left: 49.8%; top: 83.0%; width: 3.4%; height: 6.1%; }
-.hover-gemini { left: 54.1%; top: 83.7%; width: 3.8%; height: 6.0%; }
-.hover-vscode { left: 58.1%; top: 82.9%; width: 4.0%; height: 6.7%; }
-.hover-chatgpt { left: 62.6%; top: 83.2%; width: 4.1%; height: 6.4%; }
+.hover-camera { left: 70.977%; top: 28.125%; width: 11.914%; height: 18.333%; }
+.hover-ai-platform { left: 57.539%; top: 44.097%; width: 8.945%; height: 21.875%; }
+.hover-dong { left: 43.516%; top: 66.528%; width: 16.719%; height: 14.028%; }
+.hover-star { left: 68.008%; top: 73.194%; width: 2.656%; height: 5.764%; }
+.hover-chat { left: 65.898%; top: 80.208%; width: 3.438%; height: 5.625%; }
+.hover-contact { left: 70.898%; top: 58.958%; width: 14.844%; height: 25%; }
+.hover-figma { left: 31.445%; top: 77.292%; width: 4.062%; height: 6.667%; }
+.hover-blender { left: 35.039%; top: 83.472%; width: 3.438%; height: 5.278%; }
+.hover-canva { left: 39.531%; top: 81.597%; width: 3.398%; height: 5.556%; }
+.hover-capcut { left: 44.727%; top: 83.333%; width: 3.75%; height: 6.806%; }
+.hover-photoshop { left: 49.375%; top: 82.778%; width: 3.125%; height: 6.111%; }
+.hover-gemini { left: 53.75%; top: 84.028%; width: 2.812%; height: 5.694%; }
+.hover-vscode { left: 58.047%; top: 82.708%; width: 2.969%; height: 5.347%; }
+.hover-chatgpt { left: 61.328%; top: 84.792%; width: 4.062%; height: 5.139%; }
 .hotspots { position: absolute; inset: 0; pointer-events: none; }
 .hotspot { position: absolute; border: 0; border-radius: 18px; background: transparent; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 160ms ease, background-color 160ms ease, box-shadow 160ms ease; }
 .home-ready .hotspot { pointer-events: auto; }
