@@ -46,6 +46,26 @@ const projects = {
   images: string[];
 }>;
 
+const hoverItems = [
+  { id: 'cassette', label: '磁带', tilt: 'left' },
+  { id: 'bound', label: '打开弹性派项目', tilt: 'left', panel: 'bound-pie' },
+  { id: 'ticket', label: '邮票', tilt: 'right' },
+  { id: 'camera', label: '打开拍立得', tilt: 'right', panel: 'camera' },
+  { id: 'ai-platform', label: '打开 AI 实训平台项目', tilt: 'right', panel: 'ai-platform' },
+  { id: 'dong', label: '打开别有侗听项目', tilt: 'left', panel: 'dong' },
+  { id: 'star', label: '星形贴纸', tilt: 'right' },
+  { id: 'chat', label: '聊天贴纸', tilt: 'left' },
+  { id: 'contact', label: '打开联系方式', tilt: 'right', panel: 'contact' },
+  { id: 'figma', label: 'Figma', tilt: 'left' },
+  { id: 'blender', label: 'Blender', tilt: 'right' },
+  { id: 'canva', label: 'Canva', tilt: 'left' },
+  { id: 'capcut', label: 'CapCut', tilt: 'right' },
+  { id: 'photoshop', label: 'Photoshop', tilt: 'left' },
+  { id: 'gemini', label: 'Gemini', tilt: 'right' },
+  { id: 'vscode', label: 'Visual Studio Code', tilt: 'left' },
+  { id: 'chatgpt', label: 'ChatGPT', tilt: 'right' },
+] satisfies Array<{ id: string; label: string; tilt: 'left' | 'right'; panel?: Exclude<PanelKey, null> }>;
+
 const HOME_THRESHOLD = 0.985;
 const WHEEL_RATE = 0.00082;
 const FRAME_SECONDS = 1 / 30;
@@ -165,6 +185,31 @@ export default function Home() {
             <img className="keychain-pin" src="/red-pin.png" alt="" />
           </div>
 
+          <div className="hover-elements">
+            {hoverItems.map((item) => item.panel ? (
+              <button
+                key={item.id}
+                className={`hover-item hover-${item.id} tilt-${item.tilt}`}
+                type="button"
+                disabled={!homeReady}
+                onClick={() => openPanel(item.panel!)}
+                aria-label={item.label}
+              >
+                <img src={`/interactions/${item.id}.png`} alt="" />
+              </button>
+            ) : (
+              <span
+                key={item.id}
+                className={`hover-item hover-${item.id} tilt-${item.tilt}`}
+                tabIndex={homeReady ? 0 : -1}
+                role="img"
+                aria-label={item.label}
+              >
+                <img src={`/interactions/${item.id}.png`} alt="" />
+              </span>
+            ))}
+          </div>
+
           <div className="hotspots" aria-hidden={!homeReady}>
             <button
               className="hotspot hotspot-about"
@@ -177,11 +222,6 @@ export default function Home() {
               onClick={() => openPanel('about')}
               aria-label="打开关于我"
             ><span>ABOUT ME</span></button>
-            <button className="hotspot hotspot-bound" type="button" disabled={!homeReady} onClick={() => openPanel('bound-pie')} aria-label="打开弹性派项目"><span>BOUND PIE</span></button>
-            <button className="hotspot hotspot-dong" type="button" disabled={!homeReady} onClick={() => openPanel('dong')} aria-label="打开别有侗听项目"><span>别有侗听</span></button>
-            <button className="hotspot hotspot-ai" type="button" disabled={!homeReady} onClick={() => openPanel('ai-platform')} aria-label="打开 AI 实训平台项目"><span>AI 实训平台</span></button>
-            <button className="hotspot hotspot-camera" type="button" disabled={!homeReady} onClick={() => openPanel('camera')} aria-label="打开拍立得"><span>TAKE A SNAP</span></button>
-            <button className="hotspot hotspot-contact" type="button" disabled={!homeReady} onClick={() => openPanel('contact')} aria-label="打开联系方式"><span>CONTACT</span></button>
           </div>
         </div>
 
