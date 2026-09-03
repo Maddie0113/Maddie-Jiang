@@ -100,7 +100,7 @@ button, a { font: inherit; color: inherit; }
 .about-panel { position: relative; display: grid; grid-template-columns: 36% 64%; width: min(1200px,95vw); height: min(820px,92svh); overflow: hidden; border: 10px solid var(--paper); background: var(--paper); box-shadow: 0 28px 80px rgba(9,25,42,.4); animation: panel-in 260ms ease; }
 .portrait-wrap { min-width: 0; min-height: 0; overflow: hidden; background: #cfe1ef; }
 .portrait-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-.about-copy { display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: auto; padding: clamp(38px,4.5vw,64px); }
+.about-copy { display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: auto; padding: clamp(38px,4.5vw,64px); padding-top: clamp(56px,6vw,82px); padding-bottom: clamp(28px,3vw,44px); }
 .about-copy h1 { margin-top: 12px; }
 .about-intro { max-width: 690px; margin: 0; font-size: clamp(14px,1.25vw,18px); line-height: 1.8; }
 .about-divider { flex: 0 0 auto; height: 2px; margin: clamp(24px,3.4vh,38px) 0 clamp(22px,3vh,34px); background: var(--ink); }
