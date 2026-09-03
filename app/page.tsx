@@ -169,7 +169,7 @@ export default function Home() {
           <video
             ref={videoRef}
             className="motion-film"
-            src="/intro.mp4?v=2"
+            src="/intro.mp4?v=3"
             muted
             playsInline
             preload="auto"
