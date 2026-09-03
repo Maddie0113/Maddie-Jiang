@@ -97,14 +97,27 @@ button, a { font: inherit; color: inherit; }
 .project-dong .project-copy li { border-color: white; }
 .project-ai-platform .eyebrow { color: var(--blue); }
 
-.about-panel { position: relative; display: grid; grid-template-columns: .72fr 1.28fr; width: min(920px,94vw); max-height: 90svh; overflow: auto; border: 10px solid var(--paper); background: var(--paper); box-shadow: 0 28px 80px rgba(9,25,42,.4); animation: panel-in 260ms ease; }
-.portrait-wrap { display: grid; place-items: end center; min-height: 580px; overflow: hidden; background: #cfe1ef; }
-.portrait-wrap img { width: 112%; height: 100%; object-fit: contain; object-position: center bottom; }
-.about-copy { padding: clamp(38px,6vw,70px); }
-.about-copy > p:not(.eyebrow) { line-height: 1.8; }
-.about-copy dl { display: grid; gap: 13px; margin-top: 34px; }
-.about-copy dl div { border-top: 2px solid var(--ink); padding-top: 10px; }
-.about-copy dt { color: var(--orange); font-weight: 900; } .about-copy dd { margin: 5px 0 0; font-size: 13px; }
+.about-panel { position: relative; display: grid; grid-template-columns: 36% 64%; width: min(1200px,95vw); height: min(820px,92svh); overflow: hidden; border: 10px solid var(--paper); background: var(--paper); box-shadow: 0 28px 80px rgba(9,25,42,.4); animation: panel-in 260ms ease; }
+.portrait-wrap { min-width: 0; min-height: 0; overflow: hidden; background: #cfe1ef; }
+.portrait-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.about-copy { display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: auto; padding: clamp(38px,4.5vw,64px); }
+.about-copy h1 { margin-top: 12px; }
+.about-intro { max-width: 690px; margin: 0; font-size: clamp(14px,1.25vw,18px); line-height: 1.8; }
+.about-divider { flex: 0 0 auto; height: 2px; margin: clamp(24px,3.4vh,38px) 0 clamp(22px,3vh,34px); background: var(--ink); }
+.about-highlights { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(10px,1.4vw,18px); }
+.about-highlight { min-height: 118px; border: 2px solid var(--ink); background: #dbeaf4; box-shadow: 5px 5px 0 rgba(21,63,112,.18); padding: 16px; }
+.about-highlight:nth-child(2) { background: #fff1d6; }
+.about-highlight:nth-child(3) { background: #e4f2dd; }
+.about-highlight span, .about-experience span { display: block; color: var(--pink); font-size: 10px; font-weight: 900; letter-spacing: .08em; }
+.about-highlight strong { display: block; margin-top: 9px; color: var(--ink); font-size: clamp(15px,1.35vw,19px); line-height: 1.1; }
+.about-highlight p { margin: 8px 0 0; color: #31577f; font-size: 11px; line-height: 1.55; }
+.about-experience { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(14px,2vw,24px); margin-top: clamp(22px,3.2vh,34px); }
+.about-experience article { border-top: 3px solid var(--ink); background: rgba(207,225,239,.34); padding: 14px 16px 16px; }
+.about-experience strong { display: block; margin-top: 7px; color: var(--ink); font-size: clamp(14px,1.15vw,17px); line-height: 1.35; }
+.about-experience p { margin: 6px 0; color: var(--orange); font-size: 12px; font-weight: 900; }
+.about-experience em { color: #31577f; font-size: 11px; font-style: normal; line-height: 1.55; }
+.resume-link { align-self: flex-end; margin-top: clamp(24px,3.2vh,36px); border: 2px solid var(--ink); background: #dbeaf4; box-shadow: 5px 5px 0 var(--orange); padding: 11px 17px; color: var(--ink); font-size: 13px; font-weight: 900; text-decoration: none; transition: transform 170ms ease, box-shadow 170ms ease, background-color 170ms ease; }
+.resume-link:hover, .resume-link:focus-visible { transform: translate(-2px,-2px); background: var(--green); box-shadow: 7px 7px 0 var(--orange); outline: none; }
 .contact-panel { position: relative; width: min(660px,92vw); border: 12px solid var(--paper); background: repeating-linear-gradient(#fffdf4 0 34px,#9db9dc 35px 36px); box-shadow: 0 28px 80px rgba(9,25,42,.4); padding: clamp(42px,7vw,78px); transform: rotate(-1deg); animation: panel-in 260ms ease; }
 .contact-panel h1 { margin: 15px 0; color: var(--orange); font-size: clamp(46px,7vw,84px); line-height: .88; letter-spacing: -.06em; }
 .contact-panel > p:not(.eyebrow) { max-width: 470px; line-height: 1.75; }
@@ -147,7 +160,11 @@ button, a { font: inherit; color: inherit; }
   .project-gallery { min-height: 43svh; }
   .project-copy { overflow: visible; }
   .about-panel { grid-template-columns: 1fr; }
-  .portrait-wrap { min-height: 270px; max-height: 38svh; }
+  .about-panel { height: 94svh; overflow: auto; }
+  .portrait-wrap { min-height: 340px; max-height: 48svh; }
+  .about-copy { overflow: visible; padding: 34px 24px 42px; }
+  .about-highlights, .about-experience { grid-template-columns: 1fr; }
+  .about-highlight { min-height: 0; }
   .contact-panel, .camera-panel { border-width: 7px; }
   .camera-panel { padding: 38px 18px; }
   .polaroid img { height: 280px; }

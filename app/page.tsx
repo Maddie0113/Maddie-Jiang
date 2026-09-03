@@ -273,16 +273,44 @@ export default function Home() {
           ) : panel === 'about' ? (
             <article className="about-panel" onPointerDown={(event) => event.stopPropagation()}>
               <button className="panel-close" type="button" onClick={() => setPanel(null)} aria-label="关闭">×</button>
-              <div className="portrait-wrap"><img src="/portrait.png" alt="蒋倩创意肖像" /></div>
+              <div className="portrait-wrap"><img src="/about-photo.png" alt="蒋倩在喷泉前的生活照" /></div>
               <div className="about-copy">
                 <p className="eyebrow">ABOUT ME / 关于我</p>
                 <h1>你好，我是蒋倩。</h1>
-                <p>运营策划、视觉设计与产品体验的跨界实践者。我喜欢把模糊的想法拆成清晰路径，再把它推到真实世界里。</p>
-                <dl>
-                  <div><dt>江汉大学</dt><dd>数字传媒艺术本科</dd></div>
-                  <div><dt>GPA</dt><dd>3.78 / 4.0 · 3 / 50</dd></div>
-                  <div><dt>经历</dt><dd>极氪智能科技 · 视觉设计</dd></div>
-                </dl>
+                <p className="about-intro">运营策划、视觉设计与产品体验的跨界实践者。我喜欢把模糊的想法拆成清晰路径，再把它推到真实世界里。</p>
+                <div className="about-divider" />
+                <section className="about-highlights" aria-label="个人亮点">
+                  <article className="about-highlight">
+                    <span>01 / 品牌运营</span>
+                    <strong>内容与增长</strong>
+                    <p>搭建小红书稳定更新体系，孵化多条百赞内容。</p>
+                  </article>
+                  <article className="about-highlight">
+                    <span>02 / 商业转化</span>
+                    <strong>让创意落地</strong>
+                    <p>单条爆款营收 8,000 元，净利润 5,000 元。</p>
+                  </article>
+                  <article className="about-highlight">
+                    <span>03 / 跨界实践</span>
+                    <strong>AIGC × 视觉 × 产品</strong>
+                    <p>从策略、设计到真实运营，完成项目闭环。</p>
+                  </article>
+                </section>
+                <section className="about-experience" aria-label="工作经历">
+                  <article>
+                    <span>2024.08—2025.03</span>
+                    <strong>极氪智能科技（杭州）有限公司</strong>
+                    <p>市场部 · 视觉设计</p>
+                    <em>优化营销物料的信息触达，助力产品留资率提升 20%。</em>
+                  </article>
+                  <article>
+                    <span>2022.06—2022.08</span>
+                    <strong>常州壹流铭传媒有限公司</strong>
+                    <p>项目经理 · 设计剪辑</p>
+                    <em>统筹营销项目、品牌视觉与影像内容的完整交付。</em>
+                  </article>
+                </section>
+                <a className="resume-link" href="/jiang-qian-resume.pdf" target="_blank" rel="noreferrer">查看简历 <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           ) : panel === 'contact' ? (
