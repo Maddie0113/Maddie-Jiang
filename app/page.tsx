@@ -310,7 +310,7 @@ export default function Home() {
                     <em>统筹营销项目、品牌视觉与影像内容的完整交付。</em>
                   </article>
                 </section>
-                <a className="resume-link" href="/jiang-qian-resume.pdf" target="_blank" rel="noreferrer">查看简历 <span aria-hidden="true">↗</span></a>
+                <a className="resume-link" href="/jiang-qian-resume.pdf" target="_blank" rel="noreferrer">查看简历</a>
               </div>
             </article>
           ) : panel === 'contact' ? (
