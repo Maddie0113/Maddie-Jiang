@@ -118,7 +118,8 @@ button, a { font: inherit; color: inherit; }
 .about-experience strong { display: block; margin-top: 8px; color: var(--ink); font-size: clamp(13px,1.05vw,16px); line-height: 1.4; }
 .about-experience p { margin: 7px 0; color: var(--orange); font-size: 12px; font-weight: 900; line-height: 1.45; }
 .about-experience em { color: #31577f; font-size: 11px; font-style: normal; line-height: 1.65; }
-.resume-link { align-self: flex-end; margin-top: clamp(18px,2.4vh,26px); border: 2px solid var(--ink); background: #dbeaf4; box-shadow: 5px 5px 0 var(--orange); padding: 11px 17px; color: var(--ink); font-size: 13px; font-weight: 900; text-decoration: none; transition: transform 170ms ease, box-shadow 170ms ease, background-color 170ms ease; }
+.resume-link { display: flex; align-self: stretch; align-items: center; justify-content: center; gap: 8px; min-height: 50px; margin-top: clamp(18px,2.4vh,26px); border: 2px solid var(--ink); background: #dbeaf4; box-shadow: 5px 5px 0 var(--orange); padding: 11px 20px; color: var(--ink); font-size: 13px; font-weight: 900; text-align: center; text-decoration: none; transition: transform 170ms ease, box-shadow 170ms ease, background-color 170ms ease; }
+.resume-link span { line-height: 1; }
 .resume-link:hover, .resume-link:focus-visible { transform: translate(-2px,-2px); background: var(--green); box-shadow: 7px 7px 0 var(--orange); outline: none; }
 .contact-panel { position: relative; width: min(660px,92vw); border: 12px solid var(--paper); background: repeating-linear-gradient(#fffdf4 0 34px,#9db9dc 35px 36px); box-shadow: 0 28px 80px rgba(9,25,42,.4); padding: clamp(42px,7vw,78px); transform: rotate(-1deg); animation: panel-in 260ms ease; }
 .contact-panel h1 { margin: 15px 0; color: var(--orange); font-size: clamp(46px,7vw,84px); line-height: .88; letter-spacing: -.06em; }
