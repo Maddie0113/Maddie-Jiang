@@ -100,7 +100,7 @@ button, a { font: inherit; color: inherit; }
 .about-panel { position: relative; display: grid; grid-template-columns: minmax(0,2fr) minmax(0,3fr); gap: clamp(28px,3vw,46px); width: min(1200px,95vw); height: min(820px,92svh); overflow: hidden; border: 0; background: var(--paper); box-shadow: 0 28px 80px rgba(9,25,42,.4); padding: 0; animation: panel-in 260ms ease; }
 .portrait-wrap { align-self: stretch; min-width: 0; min-height: 0; height: auto; margin: 10px 0 10px 10px; overflow: hidden; background: #cfe1ef; }
 .portrait-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; transform: scale(1.02); transform-origin: center; }
-.about-copy { display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: auto; scrollbar-width: none; padding: clamp(66px,6.5vw,88px) clamp(32px,3.8vw,52px) clamp(20px,2vw,28px); }
+.about-copy { display: flex; min-width: 0; min-height: 0; flex-direction: column; overflow: auto; scrollbar-width: none; padding: clamp(100px,10vh,112px) clamp(32px,3.8vw,52px) clamp(4px,1vh,10px); }
 .about-copy::-webkit-scrollbar { display: none; }
 .about-copy h1 { margin-top: 12px; }
 .about-intro { max-width: 690px; margin: 0; font-size: clamp(14px,1.25vw,18px); line-height: 1.8; }
