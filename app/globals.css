@@ -38,7 +38,8 @@ button, a { font: inherit; color: inherit; }
 .hover-contact { left: 70.547%; top: 55.972%; width: 12.578%; height: 30.417%; }
 .hover-figma { left: 31.445%; top: 77.292%; width: 4.062%; height: 6.667%; }
 .hover-blender { left: 35.039%; top: 83.472%; width: 3.438%; height: 5.278%; }
-.hover-canva { left: 39.531%; top: 81.597%; width: 3.398%; height: 5.556%; }
+.hover-canva { left: 40.078%; top: 83.958%; width: 3.281%; height: 5.764%; }
+.home-ready .hover-canva > img { opacity: 1; }
 .hover-capcut { left: 44.727%; top: 83.333%; width: 3.75%; height: 6.806%; }
 .hover-photoshop { left: 49.375%; top: 82.778%; width: 3.125%; height: 6.111%; }
 .hover-gemini { left: 53.75%; top: 84.028%; width: 2.812%; height: 5.694%; }
