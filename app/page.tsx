@@ -516,7 +516,7 @@ export default function Home() {
             onEnded={finishIntro}
             onError={() => setIntroPlaying(false)}
           />
-          <img className="home-still" src="/home-background.png" alt="" aria-hidden="true" />
+          <img className="home-still" src="/home-final.jpg" alt="" aria-hidden="true" />
           <audio
             ref={audioRef}
             src="/bgm.mp3"
